@@ -1,3 +1,5 @@
+#import "substrate.h"
+
 //Before we do anything, let's declare an NSString called wrongPass which we'll use later.
 NSString *wrongPass = nil;
 
@@ -27,7 +29,7 @@ NSString *wrongPass = nil;
 %end
 
 //Now, we'll hook the class SBUIPasscodeLockViewWithKeypad. From the name, we can infer that this class is the view we see on the 'Enter Passcode' view.
-%hook SBUIPasscodeLockViewWithKeypad
+%hook SBUIPasscodeLockViewWit
 
 //Let's hijack the method - (id)statusTitleView, which sets the 'Enter passcode' text.
 - (id)statusTitleView {
@@ -48,10 +50,10 @@ NSString *wrongPass = nil;
 
     }
     
-    
-    //However, if the above code *didn't* run, (i.e. a wrong password was not entered and the wrongPass string still equaled nil), just return the original method as if we didn't change anything. '%orig' basically just means 'do whatever you were going to do before i got here', and since we're hooking a method which needs something to be returned (id), we *return* the original function.
+.e. a wrong password was not entered and the wrongPass string still equaled nil), just return the original method as if we didn't change anything. '%orig' basically just means 'do whatever you were going to do before i got here', and since we're hooking a method which needs something to be returned (id), we *return* the original function.
     return %orig;
-    
+        
+    //However, if the above code *didn't* run, (i
 }
 
 //Tell logos we're done with this header.

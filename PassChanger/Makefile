@@ -1,3 +1,4 @@
+THEOS_DEVICE_IP = 10.19.0.35
 ARCHS = armv7 armv7s arm64
 include theos/makefiles/common.mk
 
